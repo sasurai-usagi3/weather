@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  weather
 //
 //  Created by 宇山拓夢 on 2019/04/05.
@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class HomeController: UIViewController {
+class HomeViewController: UIViewController {
     @IBOutlet var labelArea: UILabel!
     
     private let disposeBag = DisposeBag()
