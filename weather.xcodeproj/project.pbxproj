@@ -124,9 +124,9 @@
 		B4C26AE5225714D400E1A2E5 /* weather */ = {
 			isa = PBXGroup;
 			children = (
+				B4C26B1C2257186A00E1A2E5 /* Views */,
+				B4C26B1B2257186200E1A2E5 /* ViewControllers */,
 				B4C26AE6225714D400E1A2E5 /* AppDelegate.swift */,
-				B4C26AE8225714D400E1A2E5 /* ViewController.swift */,
-				B4C26AEA225714D400E1A2E5 /* Main.storyboard */,
 				B4C26AED225714D500E1A2E5 /* Assets.xcassets */,
 				B4C26AEF225714D500E1A2E5 /* LaunchScreen.storyboard */,
 				B4C26AF2225714D500E1A2E5 /* Info.plist */,
@@ -152,6 +152,22 @@
 			path = weatherUITests;
 			sourceTree = "<group>";
 		};
+		B4C26B1B2257186200E1A2E5 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B4C26AE8225714D400E1A2E5 /* ViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B4C26B1C2257186A00E1A2E5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B4C26AEA225714D400E1A2E5 /* Main.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		EC2C51D4FF8F55F0E3AF8258 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,7 +178,6 @@
 				3744E087C4DF3857F822944B /* Pods-weatherUITests.debug.xcconfig */,
 				E254838FDB6C5BFEA95E895B /* Pods-weatherUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
