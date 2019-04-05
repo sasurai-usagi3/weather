@@ -10,6 +10,8 @@ import UIKit
 import RxSwift
 
 class HomeController: UIViewController {
+    @IBOutlet var labelArea: UILabel!
+    
     private let disposeBag = DisposeBag()
     private var fetcher: WeatherApiFetcher?
     private var usecase: FetchWeatherUseCase?
@@ -17,15 +19,13 @@ class HomeController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.fetcher = WeatherApiFetcherImpl()
         self.usecase = FetchWeatherUseCaseImpl(fetcher: self.fetcher!)
         
-        self.usecase?.fetch(areaCode: 101).subscribe(onNext: { weatherInformation in
+        self.usecase?.fetch(areaCode: 101).observeOn(MainScheduler.instance).subscribe(onNext: { weatherInformation in
             print(weatherInformation)
+            self.labelArea.text = "\(weatherInformation.location)の直近のお天気"
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
-
-
 }
 
