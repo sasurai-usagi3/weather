@@ -16,8 +16,13 @@ class FetchWeatherUseCaseImpl: FetchWeatherUseCase {
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"
-        session.dataTask(with: request) { data, response, error in
-            print(response)
+        session.dataTask(with: request) { rawData, response, error in
+            if let data = rawData {
+                let decoder = JSONDecoder()
+                let json = try! decoder.decode(JsonWeather.self, from: data)
+                
+                print(json)
+            }
         }.resume()
     }
 }
