@@ -21,7 +21,7 @@ class FetchWeatherUseCaseImpl: FetchWeatherUseCase {
                 let decoder = JSONDecoder()
                 let json = try! decoder.decode(JsonWeather.self, from: data)
                 
-                print(json)
+                print(WeatherInformation.from(json: json))
             }
         }.resume()
     }
