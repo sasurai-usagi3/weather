@@ -10,25 +10,20 @@ import Foundation
 import RxSwift
 
 class FetchWeatherUseCaseImpl: FetchWeatherUseCase {
+    private let fetcher: WeatherApiFetcher
+    private let disposeBag = DisposeBag()
+    
+    init(fetcher: WeatherApiFetcher) {
+        self.fetcher = fetcher
+    }
+    
     func fetch(areaCode: Int) -> Observable<WeatherInformation> {
         let subject = PublishSubject<WeatherInformation>()
-        // TODO: UseCase層の処理ではないので移動させる
-        let session = URLSession.shared
-        let url = URL(string: "http://weather.livedoor.com/forecast/webservice/json/v1?city=140010")!
-        var request = URLRequest(url: url)
         
-        request.httpMethod = "GET"
-        session.dataTask(with: request) { rawData, response, error in
-            if let data = rawData {
-                let decoder = JSONDecoder()
-                let json = try! decoder.decode(JsonWeather.self, from: data)
-
-                subject.onNext(WeatherInformation.from(json: json))
-                return
-            }
-            
-            subject.onError(NoDataError())
-        }.resume()
+        fetcher.fetch(areaCode: areaCode).subscribe(onNext: { json in
+            subject.onNext(WeatherInformation.from(json: json))
+            subject.onCompleted()
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
         
         return subject
     }

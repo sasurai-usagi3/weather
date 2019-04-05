@@ -11,11 +11,17 @@ import RxSwift
 
 class HomeController: UIViewController {
     private let disposeBag = DisposeBag()
+    private var fetcher: WeatherApiFetcher?
+    private var usecase: FetchWeatherUseCase?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FetchWeatherUseCaseImpl().fetch(areaCode: 101).subscribe(onNext: { weatherInformation in
+        
+        self.fetcher = WeatherApiFetcherImpl()
+        self.usecase = FetchWeatherUseCaseImpl(fetcher: self.fetcher!)
+        
+        self.usecase?.fetch(areaCode: 101).subscribe(onNext: { weatherInformation in
             print(weatherInformation)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
