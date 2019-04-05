@@ -1,5 +1,5 @@
 //
-//  FetchWeatherUsecase.swift
+//  NoDataError.swift
 //  weather
 //
 //  Created by 宇山拓夢 on 2019/04/05.
@@ -7,8 +7,6 @@
 //
 
 import Foundation
-import RxSwift
 
-protocol FetchWeatherUseCase {
-    func fetch(areaCode: Int) -> Observable<WeatherInformation> 
+class NoDataError: Error {
 }

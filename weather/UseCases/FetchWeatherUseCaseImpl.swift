@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import RxSwift
 
 class FetchWeatherUseCaseImpl: FetchWeatherUseCase {
-    func fetch(areaCode: Int) {
+    func fetch(areaCode: Int) -> Observable<WeatherInformation> {
+        let subject = PublishSubject<WeatherInformation>()
         // TODO: UseCase層の処理ではないので移動させる
         let session = URLSession.shared
         let url = URL(string: "http://weather.livedoor.com/forecast/webservice/json/v1?city=140010")!
@@ -20,9 +22,14 @@ class FetchWeatherUseCaseImpl: FetchWeatherUseCase {
             if let data = rawData {
                 let decoder = JSONDecoder()
                 let json = try! decoder.decode(JsonWeather.self, from: data)
-                
-                print(WeatherInformation.from(json: json))
+
+                subject.onNext(WeatherInformation.from(json: json))
+                return
             }
+            
+            subject.onError(NoDataError())
         }.resume()
+        
+        return subject
     }
 }

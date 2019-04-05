@@ -7,13 +7,17 @@
 //
 
 import UIKit
+import RxSwift
 
 class HomeController: UIViewController {
+    private let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        FetchWeatherUseCaseImpl().fetch(areaCode: 101)
+        FetchWeatherUseCaseImpl().fetch(areaCode: 101).subscribe(onNext: { weatherInformation in
+            print(weatherInformation)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 
 
