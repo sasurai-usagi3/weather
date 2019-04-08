@@ -9,4 +9,14 @@
 import UIKit
 
 class AreaIndexViewController: UIViewController {
+    @IBOutlet var tableAreas: UITableView!
+    private let presenter = AreaIndexPresenter()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableAreas.register(UINib(nibName: "AreaListItem", bundle: nil), forCellReuseIdentifier: "AreaListItem")
+        tableAreas.dataSource = presenter
+        tableAreas.delegate = presenter
+    }
 }

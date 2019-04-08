@@ -29,6 +29,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="fny-ka-j0I"/>
                     <connections>
+                        <outlet property="tableAreas" destination="ZIk-O5-FbH" id="7mc-iW-DRV"/>
                         <segue destination="BYZ-38-t0r" kind="show" id="wyJ-iB-isS"/>
                     </connections>
                 </viewController>
