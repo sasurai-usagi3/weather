@@ -21,7 +21,7 @@ class HomePresenter: NSObject {
         
         formatter.dateFormat = "yyyy-MM-dd"
         
-        showWeatherForecasts = self.usecase.fetch(areaCode: 101).observeOn(MainScheduler.instance)
+        showWeatherForecasts = self.usecase.fetch(areaCode: 140010).observeOn(MainScheduler.instance)
     }
 }
 
