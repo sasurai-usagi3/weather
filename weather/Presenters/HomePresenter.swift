@@ -40,6 +40,7 @@ extension HomePresenter: UITableViewDataSource, UITableViewDelegate {
         let forecast = forecasts[index]
         
         cell.labelDate.text = formatter.string(from: forecast.date)
+        cell.labelTelop.text = forecast.telop
         cell.labelMinTemperature.text = forecast.minTemperature != nil ? "最低気温: \(forecast.minTemperature!)℃" : "-"
         cell.labelMaxTemperature.text = forecast.maxTemperature != nil ? "最高気温: \(forecast.maxTemperature!)℃" : "-"
         
