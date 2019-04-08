@@ -40,6 +40,7 @@
                     </view>
                     <connections>
                         <outlet property="labelArea" destination="OzG-Qy-VzI" id="TDR-r2-NYA"/>
+                        <outlet property="tableForecast" destination="dOb-W8-gf7" id="Uif-tL-zgD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

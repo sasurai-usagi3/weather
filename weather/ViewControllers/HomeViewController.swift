@@ -11,20 +11,28 @@ import RxSwift
 
 class HomeViewController: UIViewController {
     @IBOutlet var labelArea: UILabel!
+    @IBOutlet var tableForecast: UITableView!
     
     private let disposeBag = DisposeBag()
     private var fetcher: WeatherApiFetcher?
     private var usecase: FetchWeatherUseCase?
+    private var presenter: HomePresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.fetcher = WeatherApiFetcherImpl()
         self.usecase = FetchWeatherUseCaseImpl(fetcher: self.fetcher!)
+        self.presenter = HomePresenter(usecase: self.usecase!)
         
-        self.usecase?.fetch(areaCode: 101).observeOn(MainScheduler.instance).subscribe(onNext: { weatherInformation in
-            print(weatherInformation)
+        self.tableForecast.register(UINib(nibName: "WeatherForecastListItem", bundle: nil), forCellReuseIdentifier: "WeatherForecastListItem")
+        self.tableForecast.dataSource = self.presenter
+        self.tableForecast.delegate = self.presenter
+        
+        self.presenter?.showWeatherForecasts.subscribe(onNext: { weatherInformation in
             self.labelArea.text = "\(weatherInformation.location)の直近のお天気"
+            self.presenter?.forecasts = weatherInformation.forecasts
+            self.tableForecast.reloadData()
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
 }
