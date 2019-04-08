@@ -19,13 +19,13 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-04-05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeH-hs-0uN">
-                        <rect key="frame" x="8" y="37.5" width="95" height="20.5"/>
+                        <rect key="frame" x="16" y="37.5" width="95" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MV2-Ls-XDy">
-                        <rect key="frame" x="269" y="17" width="118" height="61.5"/>
+                        <rect key="frame" x="261" y="17" width="118" height="61.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晴れ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-V4-GBZ">
                                 <rect key="frame" x="0.0" y="0.0" width="118" height="20.5"/>
@@ -51,8 +51,8 @@
                 <constraints>
                     <constraint firstItem="MV2-Ls-XDy" firstAttribute="centerY" secondItem="Mtd-3t-U1R" secondAttribute="centerY" id="BWD-vG-cTZ"/>
                     <constraint firstItem="eeH-hs-0uN" firstAttribute="centerY" secondItem="Mtd-3t-U1R" secondAttribute="centerY" id="LbP-Pf-Bsc"/>
-                    <constraint firstAttribute="trailing" secondItem="MV2-Ls-XDy" secondAttribute="trailing" constant="8" id="Svp-Zx-T5E"/>
-                    <constraint firstItem="eeH-hs-0uN" firstAttribute="leading" secondItem="Mtd-3t-U1R" secondAttribute="leading" constant="8" id="WnP-h6-ZfE"/>
+                    <constraint firstAttribute="trailing" secondItem="MV2-Ls-XDy" secondAttribute="trailing" constant="16" id="Svp-Zx-T5E"/>
+                    <constraint firstItem="eeH-hs-0uN" firstAttribute="leading" secondItem="Mtd-3t-U1R" secondAttribute="leading" constant="16" id="WnP-h6-ZfE"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
