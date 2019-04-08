@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="96" id="yku-Ya-AZh" customClass="WeatherForecastListItem" customModule="weather" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="395" height="96"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="yku-Ya-AZh" id="Mtd-3t-U1R">
+                <rect key="frame" x="0.0" y="0.0" width="395" height="95.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-04-05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeH-hs-0uN">
+                        <rect key="frame" x="8" y="37.5" width="95" height="20.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MV2-Ls-XDy">
+                        <rect key="frame" x="269" y="17" width="118" height="61.5"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晴れ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-V4-GBZ">
+                                <rect key="frame" x="0.0" y="0.0" width="118" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最高気温: 20℃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cPe-ja-dXK">
+                                <rect key="frame" x="0.0" y="20.5" width="118" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="最低気温: 10℃" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0r-xS-RpF">
+                                <rect key="frame" x="0.0" y="41" width="118" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="MV2-Ls-XDy" firstAttribute="centerY" secondItem="Mtd-3t-U1R" secondAttribute="centerY" id="BWD-vG-cTZ"/>
+                    <constraint firstItem="eeH-hs-0uN" firstAttribute="centerY" secondItem="Mtd-3t-U1R" secondAttribute="centerY" id="LbP-Pf-Bsc"/>
+                    <constraint firstAttribute="trailing" secondItem="MV2-Ls-XDy" secondAttribute="trailing" constant="8" id="Svp-Zx-T5E"/>
+                    <constraint firstItem="eeH-hs-0uN" firstAttribute="leading" secondItem="Mtd-3t-U1R" secondAttribute="leading" constant="8" id="WnP-h6-ZfE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="labelDate" destination="eeH-hs-0uN" id="KDb-oe-5Qk"/>
+                <outlet property="labelMaxTemperature" destination="cPe-ja-dXK" id="vNy-2w-bgK"/>
+                <outlet property="labelMinTemperature" destination="G0r-xS-RpF" id="SzR-yH-QZ8"/>
+                <outlet property="labelTelop" destination="Cjb-V4-GBZ" id="x0u-MQ-gKs"/>
+            </connections>
+            <point key="canvasLocation" x="-194.92753623188406" y="225.66964285714283"/>
+        </tableViewCell>
+    </objects>
+</document>
