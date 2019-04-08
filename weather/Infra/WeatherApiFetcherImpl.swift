@@ -13,7 +13,7 @@ class WeatherApiFetcherImpl: WeatherApiFetcher {
     func fetch(areaCode: Int) -> Observable<JsonWeather> {
         let subject = PublishSubject<JsonWeather>()
         let session = URLSession.shared
-        let url = URL(string: "http://weather.livedoor.com/forecast/webservice/json/v1?city=140010")!
+        let url = URL(string: "http://weather.livedoor.com/forecast/webservice/json/v1?city=\(areaCode)")!
         var request = URLRequest(url: url)
         
         request.httpMethod = "GET"
