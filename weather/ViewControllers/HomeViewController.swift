@@ -10,8 +10,8 @@ import UIKit
 import RxSwift
 
 class HomeViewController: UIViewController {
-    @IBOutlet var labelArea: UILabel!
-    @IBOutlet var tableForecast: UITableView!
+    @IBOutlet private weak var labelArea: UILabel!
+    @IBOutlet private weak var tableForecast: UITableView!
     
     private let disposeBag = DisposeBag()
     private var fetcher: WeatherApiFetcher?

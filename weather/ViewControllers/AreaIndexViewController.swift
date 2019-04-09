@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 
 class AreaIndexViewController: UIViewController {
-    @IBOutlet var tableAreas: UITableView!
+    @IBOutlet private weak var tableAreas: UITableView!
     private let presenter = AreaIndexPresenter()
     private let disposeBag = DisposeBag()
     

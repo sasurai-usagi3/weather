@@ -9,8 +9,8 @@
 import UIKit
 
 class WeatherForecastListItem: UITableViewCell {
-    @IBOutlet var labelDate: UILabel!
-    @IBOutlet var labelTelop: UILabel!
-    @IBOutlet var labelMinTemperature: UILabel!
-    @IBOutlet var labelMaxTemperature: UILabel!
+    @IBOutlet weak var labelDate: UILabel!
+    @IBOutlet weak var labelTelop: UILabel!
+    @IBOutlet weak var labelMinTemperature: UILabel!
+    @IBOutlet weak var labelMaxTemperature: UILabel!
 }
