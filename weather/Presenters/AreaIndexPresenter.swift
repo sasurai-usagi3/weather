@@ -7,8 +7,13 @@
 //
 
 import UIKit
+import RxSwift
 
-class AreaIndexPresenter: NSObject {
+class AreaIndexPresenter: UIViewController {
+    private let translateViewEventStream = PublishSubject<Int>()
+    lazy var translateViewEventHandler: Observable<Int> = {
+        return self.translateViewEventStream
+    }()
     private let areas = [
         Area(name: "東京都東京", areaCode: 130010),
         Area(name: "東京都大島", areaCode: 130020),
@@ -22,6 +27,13 @@ class AreaIndexPresenter: NSObject {
 extension AreaIndexPresenter: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return areas.count
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let index = indexPath.row
+        let area = areas[index]
+        
+        translateViewEventStream.onNext(area.areaCode)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

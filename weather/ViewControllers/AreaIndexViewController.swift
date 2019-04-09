@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import RxSwift
 
 class AreaIndexViewController: UIViewController {
     @IBOutlet var tableAreas: UITableView!
     private let presenter = AreaIndexPresenter()
+    private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,5 +20,16 @@ class AreaIndexViewController: UIViewController {
         tableAreas.register(UINib(nibName: "AreaListItem", bundle: nil), forCellReuseIdentifier: "AreaListItem")
         tableAreas.dataSource = presenter
         tableAreas.delegate = presenter
+        
+        presenter.translateViewEventHandler.subscribe(onNext: { areaCode in
+            self.performSegue(withIdentifier: "areaIndexToWeatherForecastSegue", sender: areaCode)
+        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let vc = segue.destination as! HomeViewController
+        let areaCode = sender as! Int
+        
+        vc.areaCode = areaCode
     }
 }

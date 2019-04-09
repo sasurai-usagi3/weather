@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     private var fetcher: WeatherApiFetcher?
     private var usecase: FetchWeatherUseCase?
     private var presenter: HomePresenter?
+    
+    var areaCode: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
