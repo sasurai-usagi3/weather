@@ -21,7 +21,7 @@ class AreaIndexViewController: UIViewController {
         tableAreas.dataSource = presenter
         tableAreas.delegate = presenter
         
-        presenter.translateViewEventHandler.subscribe(onNext: { areaCode in
+        presenter.translateViewEventHandler.subscribe(onNext: { [unowned self] areaCode in
             self.performSegue(withIdentifier: "areaIndexToWeatherForecastSegue", sender: areaCode)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
