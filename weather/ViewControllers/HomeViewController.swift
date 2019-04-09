@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         self.tableForecast.dataSource = self.presenter
         self.tableForecast.delegate = self.presenter
         
-        self.presenter?.showWeatherForecasts.subscribe(onNext: { weatherInformation in
+        self.presenter?.fetch(areaCode: areaCode).subscribe(onNext: { weatherInformation in
             self.labelArea.text = "\(weatherInformation.location)の直近のお天気"
             self.presenter?.forecasts = weatherInformation.forecasts
             self.tableForecast.reloadData()
