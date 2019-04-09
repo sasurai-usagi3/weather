@@ -9,5 +9,5 @@
 import UIKit
 
 class AreaListItem: UITableViewCell {
-    @IBOutlet var labelArea: UILabel!
+    @IBOutlet weak var labelArea: UILabel!
 }
