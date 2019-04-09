@@ -17,6 +17,8 @@ class HomeViewController: UIViewController {
     private var fetcher: WeatherApiFetcher?
     private var usecase: FetchWeatherUseCase?
     private var presenter: HomePresenter?
+    
+    var areaCode: Int!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +31,7 @@ class HomeViewController: UIViewController {
         self.tableForecast.dataSource = self.presenter
         self.tableForecast.delegate = self.presenter
         
-        self.presenter?.showWeatherForecasts.subscribe(onNext: { weatherInformation in
+        self.presenter?.fetch(areaCode: areaCode).subscribe(onNext: { weatherInformation in
             self.labelArea.text = "\(weatherInformation.location)の直近のお天気"
             self.presenter?.forecasts = weatherInformation.forecasts
             self.tableForecast.reloadData()
