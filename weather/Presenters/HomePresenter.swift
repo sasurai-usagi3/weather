@@ -13,15 +13,12 @@ class HomePresenter: NSObject {
     private let disposeBag = DisposeBag()
     private let usecase: FetchWeatherUseCase
     private let formatter = DateFormatter()
-    //let showWeatherForecasts: Observable<WeatherInformation>
     var forecasts: [WeatherForecast] = []
     
     init(usecase: FetchWeatherUseCase) {
         self.usecase = usecase
         
         formatter.dateFormat = "yyyy-MM-dd"
-        
-        // showWeatherForecasts = self.usecase.fetch(areaCode: areaCode).observeOn(MainScheduler.instance)
     }
     
     func fetch(areaCode: Int) -> Observable<WeatherInformation> {
