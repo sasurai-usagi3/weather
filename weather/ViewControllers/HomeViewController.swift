@@ -18,7 +18,7 @@ class HomeViewController: UIViewController {
     private var usecase: FetchWeatherUseCase?
     private var presenter: HomePresenter?
     
-    var areaCode: Int!
+    var area: Area!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
         self.tableForecast.dataSource = self.presenter
         self.tableForecast.delegate = self.presenter
         
-        self.presenter?.fetch(areaCode: areaCode).subscribe(onNext: { [unowned self] weatherInformation in
+        self.presenter?.fetch(area: area).subscribe(onNext: { [unowned self] weatherInformation in
             self.labelArea.text = "\(weatherInformation.location)の直近のお天気"
             self.presenter?.forecasts = weatherInformation.forecasts
             self.tableForecast.reloadData()

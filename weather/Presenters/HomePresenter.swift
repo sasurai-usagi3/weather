@@ -21,8 +21,8 @@ class HomePresenter: NSObject {
         formatter.dateFormat = "yyyy-MM-dd"
     }
     
-    func fetch(areaCode: Int) -> Observable<WeatherInformation> {
-        return self.usecase.fetch(areaCode: areaCode).observeOn(MainScheduler.instance)
+    func fetch(area: Area) -> Observable<WeatherInformation> {
+        return self.usecase.fetch(area: area).observeOn(MainScheduler.instance)
     }
 }
 

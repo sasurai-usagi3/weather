@@ -11,7 +11,6 @@ import RxSwift
 
 protocol FetchWeatherUseCase {
     // 雑コメント
-    // areaCodeをenumにして、Enumの勉強にしてみるといいかも
     // 一度の値受け取りであれば、ObservableよりもSingleの方がいいかも
-    func fetch(areaCode: Int) -> Observable<WeatherInformation> 
+    func fetch(area: Area) -> Observable<WeatherInformation>
 }

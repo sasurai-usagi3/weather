@@ -21,15 +21,15 @@ class AreaIndexViewController: UIViewController {
         tableAreas.dataSource = presenter
         tableAreas.delegate = presenter
         
-        presenter.translateViewEventHandler.subscribe(onNext: { [unowned self] areaCode in
-            self.performSegue(withIdentifier: "areaIndexToWeatherForecastSegue", sender: areaCode)
+        presenter.translateViewEventHandler.subscribe(onNext: { [unowned self] area in
+            self.performSegue(withIdentifier: "areaIndexToWeatherForecastSegue", sender: area)
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! HomeViewController
-        let areaCode = sender as! Int
+        let area = sender as! Area
         
-        vc.areaCode = areaCode
+        vc.area = area
     }
 }

@@ -17,10 +17,10 @@ class FetchWeatherUseCaseImpl: FetchWeatherUseCase {
         self.fetcher = fetcher
     }
     
-    func fetch(areaCode: Int) -> Observable<WeatherInformation> {
+    func fetch(area: Area) -> Observable<WeatherInformation> {
         let subject = PublishSubject<WeatherInformation>()
         
-        fetcher.fetch(areaCode: areaCode).subscribe(onNext: { json in
+        fetcher.fetch(areaCode: area.rawValue).subscribe(onNext: { json in
             subject.onNext(WeatherInformation.from(json: json))
             subject.onCompleted()
         }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
