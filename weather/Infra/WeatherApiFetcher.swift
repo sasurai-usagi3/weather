@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 protocol WeatherApiFetcher {
-    func fetch(areaCode: Int) -> Observable<JsonWeather>
+    func fetch(areaCode: Int) -> Single<JsonWeather>
 }

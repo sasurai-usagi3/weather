@@ -10,27 +10,27 @@ import Foundation
 import RxSwift
 
 class WeatherApiFetcherImpl: WeatherApiFetcher {
-    func fetch(areaCode: Int) -> Observable<JsonWeather> {
-        // ここでは、Subjectを使うよりも、Observable.createを使うほうが良いと思う
-        let subject = PublishSubject<JsonWeather>()
-        let session = URLSession.shared
-        // 余裕あったら何個かAPIClientライブラリを使ってみても良いかも
-        let url = URL(string: "http://weather.livedoor.com/forecast/webservice/json/v1?city=\(areaCode)")!
-        var request = URLRequest(url: url)
-        
-        request.httpMethod = "GET"
-        session.dataTask(with: request) { rawData, response, error in
-            if let data = rawData {
-                let decoder = JSONDecoder()
-                let json = try! decoder.decode(JsonWeather.self, from: data)
-                
-                subject.onNext(json)
-                subject.onCompleted()
-                return
-            }
+    func fetch(areaCode: Int) -> Single<JsonWeather> {
+        return Single<JsonWeather>.create { observer in
+            let session = URLSession.shared
+            // 余裕あったら何個かAPIClientライブラリを使ってみても良いかも
+            let url = URL(string: "http://weather.livedoor.com/forecast/webservice/json/v1?city=\(areaCode)")!
+            var request = URLRequest(url: url)
             
-            subject.onError(NoDataError())
-        }.resume()
-        return subject
+            request.httpMethod = "GET"
+            session.dataTask(with: request) { rawData, response, error in
+                if let data = rawData {
+                    let decoder = JSONDecoder()
+                    let json = try! decoder.decode(JsonWeather.self, from: data)
+                    
+                    observer(.success(json))
+                    return
+                }
+                
+                observer(.error(NoDataError()))
+            }.resume()
+            
+            return Disposables.create()
+        }
     }
 }
