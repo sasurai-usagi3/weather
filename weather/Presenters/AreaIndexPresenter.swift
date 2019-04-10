@@ -9,6 +9,10 @@
 import UIKit
 import RxSwift
 
+// ViewController -> Viewの表示ロジック
+// Presenter -> Viewの表示内容とかのプレゼンテーションロジック
+// で分けることが多いかも。
+// これでいうと、UIViewControllerを継承してるのが気になってる。。
 class AreaIndexPresenter: UIViewController {
     private let translateViewEventStream = PublishSubject<Int>()
     lazy var translateViewEventHandler: Observable<Int> = {
@@ -24,6 +28,8 @@ class AreaIndexPresenter: UIViewController {
     ]
 }
 
+// PresenterへのDelegate実装は、UITableViewっていうOS的なView実装を多くしってなきゃいけないから
+// Viewへの表示という形で、もっと依存度をさげて書いたほうが良いかも
 extension AreaIndexPresenter: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return areas.count

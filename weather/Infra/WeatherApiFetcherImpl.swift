@@ -11,8 +11,10 @@ import RxSwift
 
 class WeatherApiFetcherImpl: WeatherApiFetcher {
     func fetch(areaCode: Int) -> Observable<JsonWeather> {
+        // ここでは、Subjectを使うよりも、Observable.createを使うほうが良いと思う
         let subject = PublishSubject<JsonWeather>()
         let session = URLSession.shared
+        // 余裕あったら何個かAPIClientライブラリを使ってみても良いかも
         let url = URL(string: "http://weather.livedoor.com/forecast/webservice/json/v1?city=\(areaCode)")!
         var request = URLRequest(url: url)
         
@@ -29,7 +31,6 @@ class WeatherApiFetcherImpl: WeatherApiFetcher {
             
             subject.onError(NoDataError())
         }.resume()
-        
         return subject
     }
 }
