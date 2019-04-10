@@ -12,8 +12,8 @@ import RxSwift
 // ViewController -> Viewの表示ロジック
 // Presenter -> Viewの表示内容とかのプレゼンテーションロジック
 // で分けることが多いかも。
-// これでいうと、UIViewControllerを継承してるのが気になってる。。
-class AreaIndexPresenter: UIViewController {
+
+class AreaIndexPresenter: NSObject {
     private let translateViewEventStream = PublishSubject<Area>()
     lazy var translateViewEventHandler: Observable<Area> = {
         return self.translateViewEventStream
