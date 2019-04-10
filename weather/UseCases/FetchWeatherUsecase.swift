@@ -10,7 +10,5 @@ import Foundation
 import RxSwift
 
 protocol FetchWeatherUseCase {
-    // 雑コメント
-    // 一度の値受け取りであれば、ObservableよりもSingleの方がいいかも
-    func fetch(area: Area) -> Observable<WeatherInformation>
+    func fetch(area: Area) -> Single<WeatherInformation>
 }

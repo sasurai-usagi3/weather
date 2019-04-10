@@ -10,7 +10,6 @@ import UIKit
 import RxSwift
 
 class HomePresenter: NSObject {
-    private let disposeBag = DisposeBag()
     private let usecase: FetchWeatherUseCase
     private let formatter = DateFormatter()
     var forecasts: [WeatherForecast] = []
@@ -21,7 +20,7 @@ class HomePresenter: NSObject {
         formatter.dateFormat = "yyyy-MM-dd"
     }
     
-    func fetch(area: Area) -> Observable<WeatherInformation> {
+    func fetch(area: Area) -> Single<WeatherInformation> {
         return self.usecase.fetch(area: area).observeOn(MainScheduler.instance)
     }
 }

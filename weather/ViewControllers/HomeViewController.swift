@@ -31,11 +31,11 @@ class HomeViewController: UIViewController {
         self.tableForecast.dataSource = self.presenter
         self.tableForecast.delegate = self.presenter
         
-        self.presenter?.fetch(area: area).subscribe(onNext: { [unowned self] weatherInformation in
+        self.presenter?.fetch(area: area).subscribe(onSuccess: { [unowned self] weatherInformation in
             self.labelArea.text = "\(weatherInformation.location)の直近のお天気"
             self.presenter?.forecasts = weatherInformation.forecasts
             self.tableForecast.reloadData()
-        }, onError: nil, onCompleted: nil, onDisposed: nil).disposed(by: disposeBag)
+        }, onError: nil).disposed(by: disposeBag)
     }
 }
 
