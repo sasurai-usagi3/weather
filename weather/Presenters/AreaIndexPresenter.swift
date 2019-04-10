@@ -14,17 +14,17 @@ import RxSwift
 // で分けることが多いかも。
 // これでいうと、UIViewControllerを継承してるのが気になってる。。
 class AreaIndexPresenter: UIViewController {
-    private let translateViewEventStream = PublishSubject<Int>()
-    lazy var translateViewEventHandler: Observable<Int> = {
+    private let translateViewEventStream = PublishSubject<Area>()
+    lazy var translateViewEventHandler: Observable<Area> = {
         return self.translateViewEventStream
     }()
-    private let areas = [
-        Area(name: "東京都東京", areaCode: 130010),
-        Area(name: "東京都大島", areaCode: 130020),
-        Area(name: "東京都八丈島", areaCode: 130030),
-        Area(name: "東京都父島", areaCode: 130040),
-        Area(name: "神奈川県横浜", areaCode: 140010),
-        Area(name: "神奈川県小田原", areaCode: 140020)
+    private let areas: [Area] = [
+        .TOKYO,
+        .OHSHIMA,
+        .HACHIJOJIMA,
+        .CHICHIJIMA,
+        .YOKOHAMA,
+        .ODAWARA
     ]
 }
 
@@ -39,7 +39,7 @@ extension AreaIndexPresenter: UITableViewDataSource, UITableViewDelegate {
         let index = indexPath.row
         let area = areas[index]
         
-        translateViewEventStream.onNext(area.areaCode)
+        translateViewEventStream.onNext(area)
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
