@@ -1,15 +1,14 @@
 //
-//  weatherTests.swift
+//  FetchWeatherUserCaseImplTest.swift
 //  weatherTests
 //
-//  Created by 宇山拓夢 on 2019/04/05.
+//  Created by 宇山拓夢 on 2019/04/12.
 //  Copyright © 2019 宇山拓夢. All rights reserved.
 //
 
 import XCTest
-@testable import weather
 
-class weatherTests: XCTestCase {
+class FetchWeatherUserCaseImplTest: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.
