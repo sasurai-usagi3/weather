@@ -67,6 +67,7 @@
                     <constraint firstItem="eeH-hs-0uN" firstAttribute="leading" secondItem="Mtd-3t-U1R" secondAttribute="leading" constant="5" id="WnP-h6-ZfE"/>
                 </constraints>
             </tableViewCellContentView>
+            <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
             <connections>
                 <outlet property="imageViewOfTelop" destination="gfU-d6-XG6" id="lGw-2Q-bOO"/>
                 <outlet property="labelDate" destination="eeH-hs-0uN" id="KDb-oe-5Qk"/>
