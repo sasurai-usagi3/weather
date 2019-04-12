@@ -15,7 +15,6 @@
 		B4C26AEC225714D400E1A2E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C26AEA225714D400E1A2E5 /* Main.storyboard */; };
 		B4C26AEE225714D500E1A2E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4C26AED225714D500E1A2E5 /* Assets.xcassets */; };
 		B4C26AF1225714D500E1A2E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C26AEF225714D500E1A2E5 /* LaunchScreen.storyboard */; };
-		B4C26AFC225714D500E1A2E5 /* weatherTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C26AFB225714D500E1A2E5 /* weatherTests.swift */; };
 		B4C26B07225714D500E1A2E5 /* weatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C26B06225714D500E1A2E5 /* weatherUITests.swift */; };
 		B4C26B1F225719CC00E1A2E5 /* FetchWeatherUseCaseImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C26B1E225719CC00E1A2E5 /* FetchWeatherUseCaseImpl.swift */; };
 		B4C26B2122571A7D00E1A2E5 /* FetchWeatherUsecase.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C26B2022571A7D00E1A2E5 /* FetchWeatherUsecase.swift */; };
@@ -33,6 +32,8 @@
 		B4C26B42225B414400E1A2E5 /* AreaListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C26B41225B414400E1A2E5 /* AreaListItem.swift */; };
 		B4C26B44225B445800E1A2E5 /* AreaIndexPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C26B43225B445800E1A2E5 /* AreaIndexPresenter.swift */; };
 		B4C26B46225B466E00E1A2E5 /* Area.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C26B45225B466E00E1A2E5 /* Area.swift */; };
+		B4C26B48226027DF00E1A2E5 /* FetchWeatherUserCaseImplTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C26B47226027DF00E1A2E5 /* FetchWeatherUserCaseImplTest.swift */; };
+		B4C26B4B2260291D00E1A2E5 /* WeatherApiFetcherMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C26B4A2260291D00E1A2E5 /* WeatherApiFetcherMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +69,6 @@
 		B4C26AF0225714D500E1A2E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B4C26AF2225714D500E1A2E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4C26AF7225714D500E1A2E5 /* weatherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4C26AFB225714D500E1A2E5 /* weatherTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherTests.swift; sourceTree = "<group>"; };
 		B4C26AFD225714D500E1A2E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4C26B02225714D500E1A2E5 /* weatherUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = weatherUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4C26B06225714D500E1A2E5 /* weatherUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = weatherUITests.swift; sourceTree = "<group>"; };
@@ -89,6 +89,8 @@
 		B4C26B41225B414400E1A2E5 /* AreaListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaListItem.swift; sourceTree = "<group>"; };
 		B4C26B43225B445800E1A2E5 /* AreaIndexPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaIndexPresenter.swift; sourceTree = "<group>"; };
 		B4C26B45225B466E00E1A2E5 /* Area.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Area.swift; sourceTree = "<group>"; };
+		B4C26B47226027DF00E1A2E5 /* FetchWeatherUserCaseImplTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWeatherUserCaseImplTest.swift; sourceTree = "<group>"; };
+		B4C26B4A2260291D00E1A2E5 /* WeatherApiFetcherMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherApiFetcherMock.swift; sourceTree = "<group>"; };
 		BABC305A44B881398A1470B0 /* Pods-weatherTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherTests.debug.xcconfig"; path = "Target Support Files/Pods-weatherTests/Pods-weatherTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E254838FDB6C5BFEA95E895B /* Pods-weatherUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weatherUITests.release.xcconfig"; path = "Target Support Files/Pods-weatherUITests/Pods-weatherUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -174,7 +176,7 @@
 		B4C26AFA225714D500E1A2E5 /* weatherTests */ = {
 			isa = PBXGroup;
 			children = (
-				B4C26AFB225714D500E1A2E5 /* weatherTests.swift */,
+				B4E9DB4F226040B000FA495C /* UseCases */,
 				B4C26AFD225714D500E1A2E5 /* Info.plist */,
 			);
 			path = weatherTests;
@@ -240,6 +242,7 @@
 			children = (
 				B4C26B2E2257339200E1A2E5 /* WeatherApiFetcherImpl.swift */,
 				B4C26B30225733DF00E1A2E5 /* WeatherApiFetcher.swift */,
+				B4C26B4A2260291D00E1A2E5 /* WeatherApiFetcherMock.swift */,
 			);
 			path = Infra;
 			sourceTree = "<group>";
@@ -270,6 +273,14 @@
 				B4C26B43225B445800E1A2E5 /* AreaIndexPresenter.swift */,
 			);
 			path = Presenters;
+			sourceTree = "<group>";
+		};
+		B4E9DB4F226040B000FA495C /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				B4C26B47226027DF00E1A2E5 /* FetchWeatherUserCaseImplTest.swift */,
+			);
+			path = UseCases;
 			sourceTree = "<group>";
 		};
 		EC2C51D4FF8F55F0E3AF8258 /* Pods */ = {
@@ -449,15 +460,19 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-weather/Pods-weather-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/RxBlocking/RxBlocking.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/RxTest/RxTest.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxBlocking.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxTest.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -531,6 +546,7 @@
 				B4C26B2522571F5500E1A2E5 /* JsonWeather.swift in Sources */,
 				B4C26B46225B466E00E1A2E5 /* Area.swift in Sources */,
 				B4C26B2A2257292100E1A2E5 /* WeatherInfomation.swift in Sources */,
+				B4C26B4B2260291D00E1A2E5 /* WeatherApiFetcherMock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -538,7 +554,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4C26AFC225714D500E1A2E5 /* weatherTests.swift in Sources */,
+				B4C26B48226027DF00E1A2E5 /* FetchWeatherUserCaseImplTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
