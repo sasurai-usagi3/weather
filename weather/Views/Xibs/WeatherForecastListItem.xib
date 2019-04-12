@@ -19,20 +19,20 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019-04-05" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeH-hs-0uN">
-                        <rect key="frame" x="16" y="37.5" width="95" height="20.5"/>
+                        <rect key="frame" x="5" y="37.5" width="95" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gfU-d6-XG6">
-                        <rect key="frame" x="179" y="32.5" width="50" height="31"/>
+                        <rect key="frame" x="205" y="32.5" width="50" height="31"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="50" id="R1w-4H-Zd7"/>
                             <constraint firstAttribute="height" constant="31" id="aiR-Wn-SPP"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MV2-Ls-XDy">
-                        <rect key="frame" x="249" y="17" width="130" height="61.5"/>
+                        <rect key="frame" x="260" y="17" width="130" height="61.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="晴れ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cjb-V4-GBZ">
                                 <rect key="frame" x="0.0" y="0.0" width="130" height="20.5"/>
@@ -60,11 +60,11 @@
                 </subviews>
                 <constraints>
                     <constraint firstItem="gfU-d6-XG6" firstAttribute="centerY" secondItem="Mtd-3t-U1R" secondAttribute="centerY" id="4HF-3c-BBV"/>
-                    <constraint firstItem="MV2-Ls-XDy" firstAttribute="leading" secondItem="gfU-d6-XG6" secondAttribute="trailing" constant="20" id="B6V-TV-cy4"/>
+                    <constraint firstItem="MV2-Ls-XDy" firstAttribute="leading" secondItem="gfU-d6-XG6" secondAttribute="trailing" constant="5" id="B6V-TV-cy4"/>
                     <constraint firstItem="MV2-Ls-XDy" firstAttribute="centerY" secondItem="Mtd-3t-U1R" secondAttribute="centerY" id="BWD-vG-cTZ"/>
                     <constraint firstItem="eeH-hs-0uN" firstAttribute="centerY" secondItem="Mtd-3t-U1R" secondAttribute="centerY" id="LbP-Pf-Bsc"/>
-                    <constraint firstAttribute="trailing" secondItem="MV2-Ls-XDy" secondAttribute="trailing" constant="16" id="Svp-Zx-T5E"/>
-                    <constraint firstItem="eeH-hs-0uN" firstAttribute="leading" secondItem="Mtd-3t-U1R" secondAttribute="leading" constant="16" id="WnP-h6-ZfE"/>
+                    <constraint firstAttribute="trailing" secondItem="MV2-Ls-XDy" secondAttribute="trailing" constant="5" id="Svp-Zx-T5E"/>
+                    <constraint firstItem="eeH-hs-0uN" firstAttribute="leading" secondItem="Mtd-3t-U1R" secondAttribute="leading" constant="5" id="WnP-h6-ZfE"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
