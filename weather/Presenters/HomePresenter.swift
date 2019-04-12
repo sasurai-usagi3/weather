@@ -38,9 +38,12 @@ extension HomePresenter: UITableViewDataSource, UITableViewDelegate {
         let cell = tableView.dequeueReusableCell(withIdentifier: "WeatherForecastListItem") as! WeatherForecastListItem
         let index = indexPath.row
         let forecast = forecasts[index]
+        let imageUrl = URL(string: forecast.imageUrl)!
+        let imageData = try? Data(contentsOf: imageUrl)
         
         cell.labelDate.text = formatter.string(from: forecast.date)
         cell.labelTelop.text = forecast.telop
+        cell.imageViewOfTelop.image = imageData != nil ? UIImage(data: imageData!) : nil
         cell.labelMinTemperature.text = forecast.minTemperature != nil ? "最低気温: \(forecast.minTemperature!)℃" : "-"
         cell.labelMaxTemperature.text = forecast.maxTemperature != nil ? "最高気温: \(forecast.maxTemperature!)℃" : "-"
         
