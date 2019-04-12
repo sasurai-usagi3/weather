@@ -11,6 +11,7 @@ import UIKit
 class WeatherForecastListItem: UITableViewCell {
     @IBOutlet weak var labelDate: UILabel!
     @IBOutlet weak var labelTelop: UILabel!
+    @IBOutlet weak var imageViewOfTelop: UIImageView!
     @IBOutlet weak var labelMinTemperature: UILabel!
     @IBOutlet weak var labelMaxTemperature: UILabel!
 }
