@@ -24,6 +24,13 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gfU-d6-XG6">
+                        <rect key="frame" x="191" y="32.5" width="50" height="31"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="50" id="R1w-4H-Zd7"/>
+                            <constraint firstAttribute="height" constant="31" id="aiR-Wn-SPP"/>
+                        </constraints>
+                    </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="MV2-Ls-XDy">
                         <rect key="frame" x="261" y="17" width="118" height="61.5"/>
                         <subviews>
@@ -49,6 +56,8 @@
                     </stackView>
                 </subviews>
                 <constraints>
+                    <constraint firstItem="gfU-d6-XG6" firstAttribute="centerY" secondItem="Mtd-3t-U1R" secondAttribute="centerY" id="4HF-3c-BBV"/>
+                    <constraint firstItem="MV2-Ls-XDy" firstAttribute="leading" secondItem="gfU-d6-XG6" secondAttribute="trailing" constant="20" id="B6V-TV-cy4"/>
                     <constraint firstItem="MV2-Ls-XDy" firstAttribute="centerY" secondItem="Mtd-3t-U1R" secondAttribute="centerY" id="BWD-vG-cTZ"/>
                     <constraint firstItem="eeH-hs-0uN" firstAttribute="centerY" secondItem="Mtd-3t-U1R" secondAttribute="centerY" id="LbP-Pf-Bsc"/>
                     <constraint firstAttribute="trailing" secondItem="MV2-Ls-XDy" secondAttribute="trailing" constant="16" id="Svp-Zx-T5E"/>
@@ -56,6 +65,7 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="imageViewOfTelop" destination="gfU-d6-XG6" id="lGw-2Q-bOO"/>
                 <outlet property="labelDate" destination="eeH-hs-0uN" id="KDb-oe-5Qk"/>
                 <outlet property="labelMaxTemperature" destination="cPe-ja-dXK" id="vNy-2w-bgK"/>
                 <outlet property="labelMinTemperature" destination="G0r-xS-RpF" id="SzR-yH-QZ8"/>

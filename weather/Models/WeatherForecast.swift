@@ -11,6 +11,7 @@ import Foundation
 struct WeatherForecast {
     let date: Date
     let telop: String // 予想される天気。パターンがわからないから一旦String
+    let imageUrl: String // 天気に応じて変わる画像のURL
     let minTemperature: Double? // 最低気温(セ氏)。なぜかnullable
     let maxTemperature: Double? // 最高気温(セ氏)。なぜかnullable
     
@@ -21,6 +22,6 @@ struct WeatherForecast {
         let minTemperature = (json.temperature.min != nil) ? Double(json.temperature.min!.celsius) : nil
         let maxTemperature = (json.temperature.max != nil) ? Double(json.temperature.max!.celsius) : nil
         
-        return WeatherForecast(date: date!, telop: json.telop, minTemperature: minTemperature, maxTemperature: maxTemperature)
+        return WeatherForecast(date: date!, telop: json.telop, imageUrl: json.image.url, minTemperature: minTemperature, maxTemperature: maxTemperature)
     }
 }
