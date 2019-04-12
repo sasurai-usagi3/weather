@@ -59,7 +59,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dOb-W8-gf7">
-                                <rect key="frame" x="16" y="413" width="382" height="240"/>
+                                <rect key="frame" x="0.0" y="237" width="414" height="240"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="240" id="cld-Dy-5r1"/>
@@ -68,12 +68,12 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="dOb-W8-gf7" firstAttribute="top" secondItem="OzG-Qy-VzI" secondAttribute="bottom" constant="256" id="4Oq-bR-lxt"/>
+                            <constraint firstItem="dOb-W8-gf7" firstAttribute="top" secondItem="OzG-Qy-VzI" secondAttribute="bottom" constant="80" id="4Oq-bR-lxt"/>
                             <constraint firstItem="OzG-Qy-VzI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="5zx-pe-yam"/>
                             <constraint firstItem="OzG-Qy-VzI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="48" id="f11-YF-zfV"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="OzG-Qy-VzI" secondAttribute="trailing" constant="32" id="ft4-Ff-6aK"/>
-                            <constraint firstItem="dOb-W8-gf7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="jN5-2w-HQu"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="dOb-W8-gf7" secondAttribute="trailing" constant="16" id="zub-vw-zjV"/>
+                            <constraint firstItem="dOb-W8-gf7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="nMc-Fw-6QF"/>
+                            <constraint firstItem="dOb-W8-gf7" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="ug9-lO-hpi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
